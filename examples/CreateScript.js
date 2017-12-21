@@ -2,7 +2,7 @@
 
 var run = function() {
   // replace '../bitcore' with 'bitcore' if you use this code elsewhere.
-  var bitcore = require('../bitcore');
+  var bitcore = require('../onixcore');
   var networks = require('../networks');
   var Script = bitcore.Script;
   var WalletKey = bitcore.WalletKey;

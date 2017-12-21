@@ -1,7 +1,7 @@
 var chai = chai || require('chai');
 var should = chai.should();
 var assert = chai.assert;
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../onixcore');
 var base58 = bitcore.Base58.base58;
 var base58Check = bitcore.Base58.base58Check;
 

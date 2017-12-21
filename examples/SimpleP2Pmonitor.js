@@ -4,7 +4,7 @@
  * relying on PeerManager.
  */
 
-// replace by require('bitcore') if you use somewhere else
+// replace by require('onixcore') if you use somewhere else
 var bitcore = require('../');
 
 //bitcore.config.logger = 'debug';

@@ -5,7 +5,7 @@
 
 var chai = chai || require('chai');
 var should = chai.should();
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../onixcore');
 var Transaction = bitcore.Transaction;
 var Script = bitcore.Script;
 var Opcode = bitcore.Opcode;

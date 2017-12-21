@@ -2,7 +2,7 @@
 
 var chai = chai || require('chai');
 var sinon = sinon || require('sinon');
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../onixcore');
 var Transaction = bitcore.Transaction;
 var NetworkMonitor = bitcore.NetworkMonitor;
 var EventEmitter = require('events').EventEmitter;

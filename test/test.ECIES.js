@@ -1,7 +1,7 @@
 'use strict';
 
 var chai = chai || require('chai');
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../onixcore');
 var should = chai.should();
 var assert = chai.assert;
 var ECIES = bitcore.ECIES;
