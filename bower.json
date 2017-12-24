@@ -1,16 +1,19 @@
 {
-  "name": "bitcore",
+  "name": "onixcore",
   "main": "browser/bundle.js",
   "version": "0.1.34",
-  "homepage": "http://bitcore.io",
+  "homepage": "http://onixcoin.info",
   "authors": [
     "Ryan X. Charles (<ryan@bitpay.com>)"
   ],
-  "description": "A pure, powerful core for your bitcoin project.",
+  "description": "A pure, powerful core for your onixcoin project.",
   "moduleType": [
     "globals"
   ],
   "keywords": [
+    "onixcoin",
+    "onixcore",
+    "onx",
     "bitcoin",
     "bitcore",
     "btc",

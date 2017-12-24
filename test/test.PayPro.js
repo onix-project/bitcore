@@ -3,7 +3,7 @@
 var chai = chai || require('chai');
 var should = chai.should();
 var expect = chai.expect;
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../onixcore');
 
 var PayPro = bitcore.PayPro;
 var Key = bitcore.Key;

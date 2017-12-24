@@ -1,5 +1,5 @@
 var run = function() {
-  bitcore = typeof(bitcore) === 'undefined' ? require('../bitcore') : bitcore;
+  bitcore = typeof(bitcore) === 'undefined' ? require('../onixcore') : bitcore;
 
   console.log('ECIES: Elliptic Curve Integrated Encryption Scheme');
   console.log('A way of encrypting with a public key and decrypting with a private key.');

@@ -2,7 +2,7 @@
 
 var chai = chai || require('chai');
 chai.config.includeStack = true;
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../onixcore');
 
 var should = chai.should();
 

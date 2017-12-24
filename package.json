@@ -1,7 +1,7 @@
 {
-  "name": "bitcore",
-  "description": "Bitcoin Library",
-  "version": "0.1.34",
+  "name": "onixcore",
+  "description": "OnixCoin Library",
+  "version": "0.1.0",
   "author": {
     "name": "Stephen Pair",
     "email": "stephen@bitpay.com"
@@ -30,9 +30,15 @@
     {
       "name": "Gordon Hall",
       "email": "gordon@bitpay.com"
+    }, 
+    {
+      "name": "Jose Luis Estevez",
+      "email": "jose.estevez.prieto@gmail.com"
     }
   ],
   "keywords": [
+    "onixcoin",
+    "onx",
     "bitcoin",
     "btc",
     "satoshi",
@@ -40,15 +46,15 @@
     "currency",
     "virtual"
   ],
-  "main": "bitcore.js",
+  "main": "onixcore.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcore.git"
+    "url": "https://github.com/onix-project/onixcore.git"
   },
   "scripts": {
     "install": "node-gyp rebuild",
     "test": "node browser/build.js -a && node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter spec test",
+    "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec test",
     "prepublish": "node browser/build.js -m"
   },
   "dependencies": {
@@ -114,6 +120,9 @@
     "node": ">=0.10"
   },
   "devDependencies": {
-    "sinon": "^1.10.3"
+    "sinon": "^1.10.3",
+    "express": "4.6.1",
+    "request": "2.39.0",
+    "optimist": "0.6.1"
   }
 }
