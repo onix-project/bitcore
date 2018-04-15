@@ -25,7 +25,7 @@ exports.livenet = {
         merkle_root: hex('ea7b80ab9167a1e06e0654c686339ec1798e75a4b31f038d06d76cd52e82e164'),
         height: 0,
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2797
-        nonce: 1033603, 
+        nonce: 1033603,
         version: 1,
         prev_hash: buffertools.fill(new Buffer(32), 0),
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2795
@@ -37,9 +37,9 @@ exports.livenet = {
     // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/net.cpp#L1195
     dnsSeeds: [
         'seed5.cryptolife.net',
-	'seed2.cryptolife.net', 
-	'seed3.cryptolife.net', 
-	'electrum6.cryptolife.net',
+        'seed2.cryptolife.net',
+        'seed3.cryptolife.net',
+        'electrum6.cryptolife.net',
         'seed.onixcoin.com',
         'seed.onixcoin.info'
     ],
@@ -48,42 +48,31 @@ exports.livenet = {
 };
 
 exports.mainnet = exports.livenet;
-
-// FIXME Comprobar los valores correctos de Testnet
 exports.testnet = {
     name: 'testnet',
-    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2741
     magic: hex('fec4bade'),
-    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/base58.h#L277
-    // echo "obase=16; 111" | bc
-    addressVersion: 0x6f, // PUBKEY_ADDRESS_TEST
+    addressVersion: 0x6f,
     privKeyVersion: 239,
-    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/base58.h#L278
-    P2SHVersion: 196, //SCRIPT_ADDRESS_TEST
-    hkeyPublicVersion: 0x043587cf, // TODO Verificar si este valor es correcto, estamos usando el de bitcoin - Testnet bip32 Header Public
-    hkeyPrivateVersion: 0x04358394, // TODO Verificar si este valor es correcto, estamos usando el de bitcoin - Testnet bip32 Header Private
+    P2SHVersion: 196,
+    hkeyPublicVersion: 0x043587cf,
+    hkeyPrivateVersion: 0x04358394,
     genesisBlock: {
-        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2751
-        // echo -n '000008da0e16960d6c2548da4831323b956d61370e2a3fdc5150188c5c478c49' | dd conv=swab | rev
-        hash: hex('498c475c8c185051dc3f2a0e37616d953b323148da48256c0d96160eda080000'),
-        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2750
-        // echo -n 'b0019d92bc054f7418960c91e252e7d24c77719c7a30128c5f6a827c73095d2a' | dd conv=swab | rev
-        merkle_root: hex('2a5d09737c826a5f8c12307a9c71774cd2e752e2910c9618744f05bc929d01b0'),
+        hash: hex('9a8449e6d04c385cdebbad06b72eb036cac18d319f3fe773a19230281f0c0000'),
+        merkle_root: hex('8d0b8fc93dc614ad2cdcac6bc40ea0c74dedd143c20bcada1b4a120af75cfc44'),
         height: 0,
-        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2802
-        nonce: 1284927160,
+        nonce: 755634,
         version: 1,
         prev_hash: buffertools.fill(new Buffer(32), 0),
-        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2801
-        timestamp: 1394723194,
-        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2796
-        // echo $((0x1e0ffff0))
-        bits: 504365040
+        timestamp: 1521912794,
+        bits: 504365040,
     },
     dnsSeeds: [
-        'testnet-seed.onixcoin.com',
-        'testnet-seed.onixcoin.info'
+        'seed5.cryptolife.net',
+        'seed2.cryptolife.net',
+        'seed3.cryptolife.net',
+        'electrum6.cryptolife.net',
+        'seed.onixcoin.com',
+        'seed.onixcoin.info'
     ],
-    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/protocol.h#L21
     defaultClientPort: 141016
 };
