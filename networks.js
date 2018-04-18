@@ -6,32 +6,48 @@ var hex = function (hex) {
 
 exports.livenet = {
     name: 'livenet',
+    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L3105
     magic: hex('f3c3b9de'),
-    addressVersion: 0x4B,
-    privKeyVersion: 128,
-    P2SHVersion: 5,
-    hkeyPublicVersion: 0x049d7cb2,
-    hkeyPrivateVersion: 0x049d7878,
+    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/base58.h#L275
+    // echo "obase=16; 75" | bc
+    addressVersion: 0x4B, // PUBKEY_ADDRESS
+    privKeyVersion: 128,  //common to all coins
+    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/base58.h#L276
+    P2SHVersion: 5,  // SCRIPT_ADDRESS
+    hkeyPublicVersion: 0x049d7cb2, // bip32 Header Public
+    hkeyPrivateVersion: 0x049d7878, // bip32 Header Private
     genesisBlock: {
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L35
+        // echo -n '000007140b7a6ca0b64965824f5731f6e86daadf19eb299033530b1e61236e43' | dd conv=swab | rev
         hash: hex('436e23611e0b53339029eb19dfaa6de8f631574f826549b6a06c7a0b14070000'),
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2811
+        // echo -n '64e1822ed56cd7068d031fb3a4758e79c19e3386c654066ee0a16791ab807bea' | dd conv=swab | rev
         merkle_root: hex('ea7b80ab9167a1e06e0654c686339ec1798e75a4b31f038d06d76cd52e82e164'),
         height: 0,
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2797
         nonce: 1033603,
         version: 1,
         prev_hash: buffertools.fill(new Buffer(32), 0),
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2795
         timestamp: 1491940886,
-        bits: 504365040,
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2796
+        // echo $((0x1e0ffff0))
+        bits: 504365040
     },
+    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/net.cpp#L1195
     dnsSeeds: [
+        'seed5.cryptolife.net',
+        'seed2.cryptolife.net',
+        'seed3.cryptolife.net',
+        'electrum6.cryptolife.net',
         'seed.onixcoin.com',
         'seed.onixcoin.info'
     ],
+    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/protocol.h#L21
     defaultClientPort: 41016
 };
 
 exports.mainnet = exports.livenet;
-
-// FIXME Comprobar los valores correctos de Testnet
 exports.testnet = {
     name: 'testnet',
     magic: hex('fec4bade'),
@@ -41,18 +57,22 @@ exports.testnet = {
     hkeyPublicVersion: 0x043587cf,
     hkeyPrivateVersion: 0x04358394,
     genesisBlock: {
-        hash: hex('498c475c8c185051dc3f2a0e37616d953b323148da48256c0d96160eda080000'),
-        merkle_root: hex('2a5d09737c826a5f8c12307a9c71774cd2e752e2910c9618744f05bc929d01b064'),
+        hash: hex('9a8449e6d04c385cdebbad06b72eb036cac18d319f3fe773a19230281f0c0000'),
+        merkle_root: hex('8d0b8fc93dc614ad2cdcac6bc40ea0c74dedd143c20bcada1b4a120af75cfc44'),
         height: 0,
-        nonce: 1284927160,
+        nonce: 755634,
         version: 1,
         prev_hash: buffertools.fill(new Buffer(32), 0),
-        timestamp: 1394723194,
+        timestamp: 1521912794,
         bits: 504365040,
     },
     dnsSeeds: [
-        'testnet-seed.onixcoin.com',
-        'testnet-seed.onixcoin.info'
+        'seed5.cryptolife.net',
+        'seed2.cryptolife.net',
+        'seed3.cryptolife.net',
+        'electrum6.cryptolife.net',
+        'seed.onixcoin.com',
+        'seed.onixcoin.info'
     ],
     defaultClientPort: 141016
 };
