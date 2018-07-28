@@ -64,18 +64,18 @@ exports.testnet = {
     hkeyPrivateVersion: 0x04358394, // TODO Verificar si este valor es correcto, estamos usando el de bitcoin - Testnet bip32 Header Private
     genesisBlock: {
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2751
-        // echo -n '000008da0e16960d6c2548da4831323b956d61370e2a3fdc5150188c5c478c49' | dd conv=swab | rev
-        hash: hex('498c475c8c185051dc3f2a0e37616d953b323148da48256c0d96160eda080000'),
+        // echo -n '00000c1f283092a173e73f9f318dc1ca36b02eb706adbbde5c384cd0e649849a' | dd conv=swab | rev
+        hash: hex('9a8449e6d04c385cdebbad06b72eb036cac18d319f3fe773a19230281f0c0000'),
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2750
-        // echo -n 'b0019d92bc054f7418960c91e252e7d24c77719c7a30128c5f6a827c73095d2a' | dd conv=swab | rev
-        merkle_root: hex('2a5d09737c826a5f8c12307a9c71774cd2e752e2910c9618744f05bc929d01b0'),
+        // echo -n '44fc5cf70a124a1bdaca0bc243d1ed4dc7a00ec46bacdc2cad14c63dc98f0b8d' | dd conv=swab | rev
+        merkle_root: hex('8d0b8fc93dc614ad2cdcac6bc40ea0c74dedd143c20bcada1b4a120af75cfc44'),
         height: 0,
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2802
-        nonce: 1284927160,
+        nonce: 755634,
         version: 1,
         prev_hash: buffertools.fill(new Buffer(32), 0),
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2801
-        timestamp: 1394723194,
+        timestamp: 1521912794,
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2796
         // echo $((0x1e0ffff0))
         bits: 504365040
@@ -85,5 +85,5 @@ exports.testnet = {
         'testnet-seed.onixcoin.info'
     ],
     // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/protocol.h#L21
-    defaultClientPort: 141016
+    defaultClientPort: 9944
 };
