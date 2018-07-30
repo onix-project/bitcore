@@ -41,7 +41,7 @@ exports.livenet = {
         'seed3.cryptolife.net',
         'electrum6.cryptolife.net',
         'seed.onixcoin.com',
-        'seed.onixcoin.info'
+        'dnsseed.onixcoin.info'
     ],
     // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/protocol.h#L21
     defaultClientPort: 41016
@@ -57,22 +57,27 @@ exports.testnet = {
     hkeyPublicVersion: 0x043587cf,
     hkeyPrivateVersion: 0x04358394,
     genesisBlock: {
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2751
+        // echo -n '00000c1f283092a173e73f9f318dc1ca36b02eb706adbbde5c384cd0e649849a' | dd conv=swab | rev
         hash: hex('9a8449e6d04c385cdebbad06b72eb036cac18d319f3fe773a19230281f0c0000'),
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2750
+        // echo -n '44fc5cf70a124a1bdaca0bc243d1ed4dc7a00ec46bacdc2cad14c63dc98f0b8d' | dd conv=swab | rev
         merkle_root: hex('8d0b8fc93dc614ad2cdcac6bc40ea0c74dedd143c20bcada1b4a120af75cfc44'),
         height: 0,
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2802
         nonce: 755634,
         version: 1,
         prev_hash: buffertools.fill(new Buffer(32), 0),
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2801
         timestamp: 1521912794,
-        bits: 504365040,
+        // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2796
+        // echo $((0x1e0ffff0))
+        bits: 504365040
     },
     dnsSeeds: [
-        'seed5.cryptolife.net',
-        'seed2.cryptolife.net',
-        'seed3.cryptolife.net',
-        'electrum6.cryptolife.net',
         'seed.onixcoin.com',
-        'seed.onixcoin.info'
+        'dnsseed01.onixcoin.info'
     ],
-    defaultClientPort: 141016
+    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/protocol.h#L21
+    defaultClientPort: 9944
 };
