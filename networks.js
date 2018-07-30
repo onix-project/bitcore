@@ -25,7 +25,7 @@ exports.livenet = {
         merkle_root: hex('ea7b80ab9167a1e06e0654c686339ec1798e75a4b31f038d06d76cd52e82e164'),
         height: 0,
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2797
-        nonce: 1033603, 
+        nonce: 1033603,
         version: 1,
         prev_hash: buffertools.fill(new Buffer(32), 0),
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2795
@@ -37,31 +37,25 @@ exports.livenet = {
     // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/net.cpp#L1195
     dnsSeeds: [
         'seed5.cryptolife.net',
-	'seed2.cryptolife.net', 
-	'seed3.cryptolife.net', 
-	'electrum6.cryptolife.net',
+        'seed2.cryptolife.net',
+        'seed3.cryptolife.net',
+        'electrum6.cryptolife.net',
         'seed.onixcoin.com',
-        'seed.onixcoin.info'
+        'dnsseed.onixcoin.info'
     ],
     // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/protocol.h#L21
     defaultClientPort: 41016
 };
 
 exports.mainnet = exports.livenet;
-
-// FIXME Comprobar los valores correctos de Testnet
 exports.testnet = {
     name: 'testnet',
-    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2741
     magic: hex('fec4bade'),
-    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/base58.h#L277
-    // echo "obase=16; 111" | bc
-    addressVersion: 0x6f, // PUBKEY_ADDRESS_TEST
+    addressVersion: 0x6f,
     privKeyVersion: 239,
-    // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/base58.h#L278
-    P2SHVersion: 196, //SCRIPT_ADDRESS_TEST
-    hkeyPublicVersion: 0x043587cf, // TODO Verificar si este valor es correcto, estamos usando el de bitcoin - Testnet bip32 Header Public
-    hkeyPrivateVersion: 0x04358394, // TODO Verificar si este valor es correcto, estamos usando el de bitcoin - Testnet bip32 Header Private
+    P2SHVersion: 196,
+    hkeyPublicVersion: 0x043587cf,
+    hkeyPrivateVersion: 0x04358394,
     genesisBlock: {
         // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/main.cpp#L2751
         // echo -n '00000c1f283092a173e73f9f318dc1ca36b02eb706adbbde5c384cd0e649849a' | dd conv=swab | rev
@@ -81,8 +75,8 @@ exports.testnet = {
         bits: 504365040
     },
     dnsSeeds: [
-        'testnet-seed.onixcoin.com',
-        'testnet-seed.onixcoin.info'
+        'seed.onixcoin.com',
+        'dnsseed01.onixcoin.info'
     ],
     // https://github.com/jestevez/onixcoin/blob/28aec388d7014fcc2bf1de60f2113b85d1840ddf/src/protocol.h#L21
     defaultClientPort: 9944
